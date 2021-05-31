@@ -1,0 +1,171 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+}
+
+.row {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+/* linija horizontalna*/
+hr {
+    margin: 0;
+}
+#linija-kratka {
+    width: 70%;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+/*logo*/
+#logo-img {
+    width: 300px;
+    height: auto;
+}
+
+
+/*dugme odjavi se*/
+#odjavi-se-button {
+    margin-left: 80%;
+}
+
+/*ikonice sidenav*/
+.icon {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+.nav-link {
+    margin-top: 10px;
+    width: 230px;
+}
+.nav-link:hover{
+    font-weight: 700;
+}
+.nav-link[aria-selected="true"] .icon {
+    filter: invert(1);
+}
+
+/*modal ucitaj dokument*/
+.upload-box {
+    background-color: white;
+    border-radius: .25rem;
+   /* box-shadow: 5px 5px 10px grey;*/
+    outline: none;
+}
+::-webkit-file-upload-button {
+    color: white;
+    background-color: #4285f4;
+    padding: 10px;
+    border: 2px;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+main {
+    padding: 2%;
+}
+
+#tabela-datoteke {
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    align-content: center;
+    margin-left: 50px;
+}
+
+.icon-doc {
+    width: 20px;
+    height: auto;
+    margin: 2px;
+    margin-right: 10px;
+}
+
+.table-hover > tbody > tr .glyphicon-options {
+    visibility: hidden;
+}
+
+.table-hover > tbody > tr:hover .glyphicon-options {
+    visibility: visible;
+}
+
+.icon-doc:hover {
+    opacity: 0.8;
+}
+
+.arrow {
+    width: 15px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/*Responsive*/
+/*od 575px*/
+[class*="col-"] {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    #tabela-datoteke {
+        margin-left: 0px;
+        padding: 0;
+    }
+    #linija-kratka {
+        width: 0px;
+    }
+}
+
+@media (max-width: 990px) {
+    .container {
+        margin-left: 80px;
+    }
+}
+
+@media (min-width: 1352px) {
+    #pretraga-input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1290px) {
+    #pretraga {
+        margin-left: 100px;
+    }
+
+    #btn-OdjaviSe {
+        margin-left: 130px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #pretraga {
+        margin-left: 50px;
+    }
+
+    #btn-OdjaviSe {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 1040px) {
+    #pretraga {
+        margin-left: 20px;
+    }
+
+    #btn-OdjaviSe {
+        margin-left: 50px;
+    }
+
+    .container {
+        margin-left: 50px;
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Naslov stranice -->
+    <title>DocumentDrive</title>
+    <!-- Dodavanje linka za css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Dodavanje bootstrap-a -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    
+    <div class="signIn-UpContainer">
+        <div class="column">
+            <!-- Zaglavlje koje sadrzi logo i natpis Otvorite nalog -->
+            <div class="header">
+                 <img src="D:/Fakultet/6. semestar/Razvoj softvera otvorenog koda/Seminarski/Logo.png" title="Logo" alt="Logo" height="60">
+                 <h3>Otvorite nalog</h3>
+            </div>
+            <!-- Forma za unos podataka prilikom registracije -->
+            <div class="loginForm">
+                <form >
+
+                    <input type="text" name="ime" placeholder="Ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
+
+                    <input type="text" name="prezime" placeholder="Prezime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
+
+
+                    <input type="text" name="korisnickoIme" placeholder="Korisničko ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
+
+ 
+                    <input type="email" name="email" placeholder="Email"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">                    
+                    
+                    <input type="password" name="lozinka" placeholder="Lozinka" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
+                    <input type="password" name="lozinka" placeholder="Potvrdi lozinku" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');"> 
+                    <!-- Dugme potvrde -->
+                    <input type="submit" name="submitButton" value="Potvrdi">
+                </form>      
+            </div>
+            <!-- Povezivanje sa stranicom za prijavljivanje -->
+            <a class="signIn-UpMessage" href="prijavljivanje.html">Ako već posedujete nalog, prijavite se ovde</a>
+        </div>
+    </div>
+    
+
+
+</body>
+</html>

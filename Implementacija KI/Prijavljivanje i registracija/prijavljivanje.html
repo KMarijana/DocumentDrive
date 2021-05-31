@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Naziv-->
+    <title>DocumentDrive</title>
+    <!--Link za css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Dodavanje bootstrap-a -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="signIn-UpContainer">
+        <div class="column">
+            <!-- Zaglavlje koje sadrzi logo i natpis Prijavi se -->
+            <div class="header">
+                <img src="D:/Fakultet/6. semestar/Razvoj softvera otvorenog koda/Seminarski/Logo.png" title="Logo" alt="Logo" height="60">
+                <h3>Prijavite se</h3>
+            </div>
+            <!-- Forma za unos podataka prilikom prijavljivanja -->
+            <div class="loginForm">
+                <form >
+                    <input type="text" name="Korisničko ime" placeholder="Korisničko ime" required autocomplete="off"  oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
+                    <input type="password" name="Šifra" placeholder="Šifra" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
+                    <input type="submit" name="submitButton" value="Potvrdi">
+                </form>
+                    
+            </div>
+            <!-- Povezivanje sa stranicom za kreiranje naloga -->
+            <a class="signIn-UpMessage" href="registracija.html">Otvori nalog ovde!</a>
+        </div>
+
+    </div>
+
+
+    
+</body>
+</html>

@@ -26,22 +26,16 @@
             </div>
             <!-- Forma za unos podataka prilikom registracije -->
             <div class="loginForm">
-                <form >
+                <form method = "POST">
 
-                    <input type="text" name="ime" placeholder="Ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
-
-                    <input type="text" name="prezime" placeholder="Prezime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
-
-
-                    <input type="text" name="korisnickoIme" placeholder="Korisničko ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
-
- 
-                    <input type="email" name="email" placeholder="Email"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">                    
-                    
-                    <input type="password" name="lozinka" placeholder="Lozinka" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');">
-                    <input type="password" name="lozinka" placeholder="Potvrdi lozinku" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');"> 
+                    <input type="text" name="ime" placeholder="Ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+                    <input type="text" name="prezime" placeholder="Prezime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+                    <input type="text" name="korisnickoIme" placeholder="Korisničko ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+                    <input type="email" name="email" placeholder="Email"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">                                    
+                    <input type="password" name="lozinka" placeholder="Lozinka" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+                    <input type="password" name="lozinka" placeholder="Potvrdi lozinku" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')"> 
                     <!-- Dugme potvrde -->
-                    <input type="submit" name="submitButton" value="Potvrdi">
+                    <button type="submit">Potvrdi</button>
                 </form>      
             </div>
             <!-- Povezivanje sa stranicom za prijavljivanje -->

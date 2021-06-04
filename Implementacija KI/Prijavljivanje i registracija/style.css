@@ -31,7 +31,7 @@
     border-bottom: 1px solid #dedede;
 }
 /*dugme prijavljivanje*/
-.signIn-UpContainer .column form input[type="submit"] {
+.signIn-UpContainer .column form button[type="submit"] {
     background: #4285f4;
     color: #fff;
     height: 36px;

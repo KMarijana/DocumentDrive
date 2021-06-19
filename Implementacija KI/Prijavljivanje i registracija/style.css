@@ -76,9 +76,6 @@
     padding-top: 16px;
 }
 
-.signIn-UpContainer .column .header span {
-    font-size: 14px;
-}
 /*Poruka o gresci*/
 .errorMessage {
     color: #f00;

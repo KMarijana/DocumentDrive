@@ -32,6 +32,8 @@ public class Datoteka {
     @Column(name = "putanja")
     private String putanja;
 
+
+    //naredba za povezivanje tabela u bazi
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "folder_id")
     private Folder folder;
@@ -99,7 +101,7 @@ public class Datoteka {
         this.folder = folder;
     }
 
-    // toString metoda za ispis
+    // toString metoda za ipisi
     @Override
     public String toString() {
         return "Datoteka{" +

@@ -30,6 +30,7 @@ public class Folder {
     @Column(name = "putanja")
     private String putanja;
 
+    //naredbe za povezivanje tabela u bazi
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "drive_id", referencedColumnName = "drive_id")
     private Drive drive;

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @RequestMapping("v1")
 public class KorisnikController {
-
     //instanca interfejsa IKorisnikService
     @Autowired
     private IKorisnikService korisnikService;

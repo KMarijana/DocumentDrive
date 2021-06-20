@@ -20,9 +20,15 @@ public class Drive {
     @Column(name = "glavna_putanja")
     private String glavnaPutanja;
 
+    //naredbe za povezivanje tabela u bazi
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "korisnik_id", referencedColumnName = "korisnik_id")
     private Korisnik korisnik;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "drive_id", referencedColumnName = "drive_id")
+    private List<Folder> folderi = new ArrayList<>();
+
 
 
     // Defaultni konstruktor i konstruktor sa parametrima
@@ -30,11 +36,11 @@ public class Drive {
     public Drive() {
     }
 
-    public Drive(String glavnaPutanja,  Korisnik korisnik) {
+    public Drive(String glavnaPutanja, List<Folder> folderi, Korisnik korisnik) {
         this.glavnaPutanja = glavnaPutanja;
         this.korisnik = korisnik;
+        this.folderi = folderi;
     }
-
 
     // get i set metode atributa
 
@@ -62,13 +68,19 @@ public class Drive {
         this.id = id;
     }
 
-    //metoda toString za ispis
+    public List<Folder> getFolderi() {
+        return folderi;
+    }
+
+    public void setFolderi(List<Folder> folderi) {
+        this.folderi = folderi;
+    }
+
+    // toString metoda za ispis
     @Override
     public String toString() {
         return "Drive{" +
                 "id=" + id +
-                ", glavnaPutanja='" + glavnaPutanja + '\'' +
-                ", korisnik=" + korisnik +
                 '}';
     }
 }

@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Table(name = "Korisnik")
 @Entity
 public class Korisnik {
-
     //privatni atributi klase Korisnik
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -117,7 +116,6 @@ public class Korisnik {
     public void setPotvrdaLozinke(String potvrdaLozinke) {
         this.potvrdaLozinke = potvrdaLozinke;
     }
-
 
     //metoda toString koja sluzi za ispis
     @Override

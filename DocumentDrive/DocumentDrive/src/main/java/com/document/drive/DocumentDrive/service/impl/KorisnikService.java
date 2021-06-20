@@ -1,8 +1,8 @@
 package com.document.drive.DocumentDrive.service.impl;
 
 import com.document.drive.DocumentDrive.dto.KorisnikDto;
-import com.document.drive.DocumentDrive.dto.KorisnikPrijavaDto;
 import com.document.drive.DocumentDrive.model.Drive;
+import com.document.drive.DocumentDrive.model.Folder;
 import com.document.drive.DocumentDrive.model.Korisnik;
 import com.document.drive.DocumentDrive.repository.DriveRepository;
 import com.document.drive.DocumentDrive.repository.KorisnikRepository;
@@ -21,7 +21,6 @@ public class KorisnikService implements IKorisnikService {
     //instanca klase korisnikRepository
     @Autowired
     private KorisnikRepository korisnikRepository;
-
     //instanca klase driveRepository
     @Autowired
     private DriveRepository driveRepository;
@@ -47,12 +46,18 @@ public class KorisnikService implements IKorisnikService {
                 korisnikDto.getKorisnickoIme(),
                 korisnikDto.getLozinka(),
                 korisnikDto.getPotvrdaLozinke());
-
         //cuva novog korisnika
-        noviKorisnik = korisnikRepository.saveAndFlush(noviKorisnik);
-        String korisnikFolderPutanja = glavnaPutanja + noviKorisnik.getId() + "/root/";
+                noviKorisnik = korisnikRepository.saveAndFlush(noviKorisnik);
+                String korisnikFolderPutanja = glavnaPutanja + noviKorisnik.getId() + "/root/";
 
+        var drive = new Drive(korisnikFolderPutanja, new ArrayList<>(), noviKorisnik);
+        var folder = new Folder("root", new Timestamp(System.currentTimeMillis()), korisnikFolderPutanja, drive);
+        drive.setFolderi(Collections.singletonList(folder));
+                driveRepository.saveAndFlush(drive);
 
+        //kreiranje praznog foldera na putanji korisnika
+        File file = new File(korisnikFolderPutanja);
+        file.mkdirs();
 
         return noviKorisnik;
     }

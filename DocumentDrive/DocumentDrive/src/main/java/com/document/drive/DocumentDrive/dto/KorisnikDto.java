@@ -1,7 +1,6 @@
 package com.document.drive.DocumentDrive.dto;
 
 public class KorisnikDto {
-
     //privatni atributi klase
     private long id;
     private String ime;

@@ -1,0 +1,204 @@
+<!--Navigacija-->
+<header>
+
+  <!--Logo-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img id="logo-img" src="assets/logo2.png" class="d-inline-block align-top" alt="logo">
+
+      <!--Dugme odjavi se-->
+      <ul id="odjavi-se-button" class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <button class="btn btn-outline-primary my-2 my-sm-0" (click)="odjaviSe()" type="submit">Odjavi se</button>
+        </li>
+      </ul>
+
+  </nav>
+  <hr>
+</header>
+
+
+<!--Meni sa leve strane-->
+<div class="row">
+  <div class="col-sm-3 col-md-3 col-lg-3 menu mt-1">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+      <!-- Folder Modal-->
+      <a (click)="openNewFolderModal(newFolder)" class="nav-link">
+        <img class="icon" src="assets/folder (1).png" alt="folder" />Novi folder</a>
+
+
+
+      <!--Upload Modal-->
+      <a (click)="openUploadModal(upload)" class="nav-link">
+        <img class="icon" src="assets/upload.png" alt="ucitaj" /> Učitaj dokument</a>
+
+      <!-- Korisnikov drive sadržaj-->
+      <a (click)="refreshCurrentFolder()" class="nav-link active" id="v-pills-drive-tab" data-toggle="pill" role="tab"
+        aria-controls="v-pills-drive" aria-selected="true"><img class="icon" src="assets/directory.png"
+          alt="direktorijum" /> Moj disk</a>
+
+      <!--Info Modal -->
+      <a (click)="openInfoModal(info)" class="nav-link">
+        <img class="icon" src="assets/information.png" alt="info" /> Info</a>
+
+
+
+    </div>
+    <hr id="linija-kratka">
+  </div>
+
+  <!--Tabela sa datotekama-->
+  <div class="col-sm-10 col-md-8 col-lg-8 mt-3">
+    <div id="tabela-datoteke" class="container">
+      <table class="table table-hover" *ngIf="!!sadrzajDrive; else sadrzajDriveFolder">
+        <thead>
+          <tr>
+            <!--Zaglavlje tabele-->
+            <th scope="col">Naziv</th>
+            <th scope="col">Datum</th>
+            <th scope="col">Veličina</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--opcije za datoteku-->
+          <tr *ngFor="let file of sadrzajDrive.datoteke; index as i">
+            <td>{{file.naziv}}</td>
+            <td>{{file.datumKreiranja | date:'medium'}}</td>
+            <td>{{file.velicina}} bytes</td>
+            <td class="glyphicon glyphicon-options">
+              <a (click)="download(i)"><img class="icon-doc" src="assets/download.png" /></a>
+              <a (click)="openShareModal(share)"><img class="icon-doc" src="assets/share.png" /></a>
+              <a (click)="obrisiDatoteku(i)"><img class="icon-doc" src="assets/deleteFile.png" /></a>
+            </td>
+          </tr>
+
+          <!--opcije za folder-->
+          <tr *ngFor="let file of sadrzajDrive.folderi; index as i" (dblclick)="prikaziFolder(i)">
+            <td>{{file.naziv}}</td>
+            <td>{{file.datumKreiranja | date:'medium'}}</td>
+            <td class="glyphicon glyphicon-options">
+              <a (click)="openShareModal(share)"><img class="icon-doc" src="assets/share.png" /></a>
+              <a (click)="obrisiFolder(i)"><img class="icon-doc" src="assets/deleteFile.png" /></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--kada se klikne na otvaranje foldera korisnik dobija prikaz praznog foldera u koji može da učita datoteku ili ako već postoji datoteka u folderu, prikazuje se-->
+<ng-template #sadrzajDriveFolder>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Naziv</th>
+        <th scope="col">Datum</th>
+        <th scope="col">Veličina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!!folderSadrzaj.naziv">
+        <td>{{folderSadrzaj.naziv}}</td>
+        <td>{{folderSadrzaj.datumKreiranja | date:'medium'}}</td>
+        <td>{{folderSadrzaj.velicina}} bytes</td>
+        <td class="glyphicon glyphicon-options">
+          <a (click)="download(folderSadrzaj.datotekaId)"><img class="icon-doc" src="assets/download.png" /></a>
+          <a (click)="obrisiDatoteku(folderSadrzaj.datotekaId)"><img class="icon-doc" src="assets/deleteFile.png" /></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<!--novi prozor u kom se kreira folder-->
+<ng-template #newFolder let-modal>
+  <div class="modal-content" id="novi-folder">
+    <div class="modal-header">
+      <h5 class="modal-title" id="Folder">Novi folder</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <input type="text" [(ngModel)]="newFolderName" name="folderName" minlength=1 class="folder-input" required />
+      </form>
+    </div>
+    <!--dugme za zatvaranje prozora i dugme za kreiranje foldera-->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal"
+        (click)="modal.close('Close')">Zatvori</button>
+      <button type="submit" class="btn btn-primary" (click)="modal.close('Save')">Kreiraj</button>
+    </div>
+  </div>
+
+</ng-template>
+
+<!--prozor za učitavanje dokumenta na drive-->
+<ng-template #upload let-modal>
+  <div class="modal-content" id="upload-modal">
+    <div class="modal-header">
+      <h5 class="modal-title" id="upload">Učitaj dokument</h5>
+      <button type="button" class="close" (click)="modal.close('Cross click')" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="upload">
+        <label for="myfile">
+        </label>
+        <input type="file" (change)="dodajFajl($event)" class="upload-box">
+      </form>
+    </div>
+    <!--dugme za zatvaranje prozora i dugme za upload-ovanje dokumenta-->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal"
+        (click)="modal.close('Close')">Zatvori</button>
+      <button type="submit" class="btn btn-primary" (click)="modal.close('Upload')">Sačuvaj</button>
+    </div>
+  </div>
+</ng-template>
+
+<!--prozor koji prikazuje informacije o aplikaciji-->
+<ng-template #info let-modal>
+  <div class="modal-content" id="info-modal">
+    <div class="modal-header">
+      <h5 class="modal-title" id="Info">Informacije o aplikaciji</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <strong>Naziv programa</strong>: Document drive <br>
+      <strong>Autori:</strong> Marijana Kalamin SI 3/18 i Jelena Levajić SI 21/18 <br>
+      <strong>Godina:</strong> 2021 <br>
+      <strong>Predmet:</strong> Razvoj softvera otvorenog koda
+    </div>
+    <!--dugme za zatvaranje prozora -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="modal.close('Info')">OK</button>
+    </div>
+  </div>
+</ng-template>
+
+<!--prozor za deljenje sadržaja, generisanje share linka-->
+<ng-template #share let-modal>
+  <div class="modal-content" id="share-modal">
+    <div class="modal-header">
+      <h5 class="modal-title" id="Share">Link za deljenje</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Link:</p>
+      <p>{{link}}</p>
+
+    </div>
+    <!--dugme za zatvaranje prozora-->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="modal.close('Share')">OK</button>
+    </div>
+  </div>
+</ng-template>

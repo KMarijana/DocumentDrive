@@ -1,0 +1,175 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+      sans-serif;
+}
+
+.row {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* linija horizontalna*/
+hr {
+  margin: 0;
+}
+#linija-kratka {
+  width: 10%;
+  text-align: left;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+/*logo*/
+#logo-img {
+  width: 300px;
+  height: auto;
+}
+
+
+/*dugme odjavi se*/
+#odjavi-se-button {
+  margin-left: 60%;
+}
+
+/*ikonice sidenav*/
+.icon {
+  width: 35px;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 10%;
+}
+.nav-link {
+  margin-top: 10px;
+  width: 230px;
+}
+.nav-link:hover{
+  font-weight: 700;
+  cursor: pointer;
+}
+.nav-link[aria-selected="true"] .icon {
+  filter: invert(1);
+}
+
+
+/*modal ucitaj dokument*/
+.upload-box {
+  background-color: white;
+  border-radius: .25rem;
+  outline: none;
+  padding: 2%;
+}
+#upload-modal {
+  padding: 8%;
+}
+
+/*info modal*/
+#info-modal {
+  padding: 8%;
+}
+/* novi folder modal*/
+#novi-folder {
+  padding: 8%;
+}
+
+main {
+  padding: 2%;
+}
+
+#tabela-datoteke {
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  align-content: center;
+  margin-left: 20%;
+  margin-top: -10%;
+}
+
+.icon-doc {
+  width: 20px;
+  height: auto;
+  margin: 2px;
+  margin-right: 10px;
+}
+
+.table-hover > tbody > tr .glyphicon-options {
+  visibility: hidden;
+}
+
+.table-hover > tbody > tr:hover .glyphicon-options {
+  visibility: visible;
+}
+
+.icon-doc:hover {
+  opacity: 0.8;
+}
+
+.arrow {
+  width: 15px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar-toggler {
+  margin-right: 10%;
+}
+/*Responsive*/
+/*od 575px*/
+[class*="col-"] {
+  width: 100%;
+}
+
+
+
+
+@media (max-width: 1290px) {
+
+  #odjavi-se-button {
+      margin-left: 60%;
+  }
+  #tabela-datoteke {
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 1040px) {
+
+  #odjavi-se-button {
+      margin-left: 60%;
+      margin-right: 20px;
+  }
+
+  .container {
+      margin-left: 50px;
+  }
+}
+@media (max-width: 990px) {
+  #odjavi-se-button {
+    margin-left: 80%;
+    margin-bottom: 20px;
+  }
+  #tabela-datoteke {
+    margin-left: 35%;
+  }
+}
+
+@media (max-width: 767px) {
+  #tabela-datoteke {
+    margin-top: 10%;
+      margin-left: 0px;
+      padding: 0;
+  }
+  #linija-kratka {
+      width: 0px;
+  }
+  #odjavi-se-button {
+    margin-left: 80%;
+  }
+}
+
+

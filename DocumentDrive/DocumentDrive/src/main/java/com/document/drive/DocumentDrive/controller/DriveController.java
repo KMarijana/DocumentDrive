@@ -109,7 +109,7 @@ public class DriveController {
     }
 
 
-    // koristeci get metodu, poziva se metoda za preuzimanje datoteke
+    // koristeci get metodu, u zavisnosti od prosleđenog id-a preuzima se datoteka na korisnikov hard disk
     @GetMapping(value = "preuzmiDatoteku", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     @ResponseBody
     public ResponseEntity<Resource> preuzmi(@RequestParam long datotekaId) throws IOException {

@@ -46,6 +46,7 @@ public class KorisnikService implements IKorisnikService {
                 korisnikDto.getKorisnickoIme(),
                 korisnikDto.getLozinka(),
                 korisnikDto.getPotvrdaLozinke());
+        
         //cuva novog korisnika
                 noviKorisnik = korisnikRepository.saveAndFlush(noviKorisnik);
                 String korisnikFolderPutanja = glavnaPutanja + noviKorisnik.getId() + "/root/";

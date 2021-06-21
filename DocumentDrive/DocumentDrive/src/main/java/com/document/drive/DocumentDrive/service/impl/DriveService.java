@@ -47,7 +47,8 @@ public class DriveService implements IDriveService {
         return URLEncoder.encode(link, StandardCharsets.UTF_8.toString());
     }
 
-    // metoda za ucitavanje sadrzaja diska, porsleđuje se korisnikov id i na osnovu toga se ucitava sve sto se nalazi na njegovom drive-u, folderi i datoteke
+    // metoda za ucitavanje sadrzaja diska, porsleđuje se korisnikov id i na osnovu toga se ucitava sve sto
+    // se nalazi na njegovom drive-u, folderi i datoteke
     @Override
     public SadrzajDriveDto ucitajSadrzaj(long korisnikId) {
         final var korisnikDrive = korisnikRepository.getOne(korisnikId).getDrive();

@@ -1,0 +1,22 @@
+
+  <div class="signIn-UpContainer">
+      <div class="column">
+          <!-- Zaglavlje koje sadrzi logo i natpis Prijavi se -->
+          <div class="header">
+              <img src="assets/Logo.png" title="Logo" alt="Logo" >
+              <h3>Prijavite se</h3>
+          </div>
+          <!-- Forma za unos podataka prilikom prijavljivanja -->
+          <div class="loginForm">
+              <form >
+                  <input type="text" [(ngModel)]="korisnik.email" name="email" placeholder="Email" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+                  <input type="password" [(ngModel)]="korisnik.lozinka" name="lozinka" placeholder="Lozinka" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')" >
+                  <button class="btn btn-primary" name="submitButton" (click)="prijaviSe()">Potvrdi</button>
+              </form>
+
+          </div>
+          <!-- Povezivanje sa stranicom za kreiranje naloga -->
+          <a class="signIn-UpMessage" (click)="registrujSe()">Otvori nalog ovde!</a>
+      </div>
+
+  </div>

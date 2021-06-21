@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="42cf8808-4bc9-488a-ab60-a39a7b07a109" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/DocumentDriveApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/DocumentDriveApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/controller/DriveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/controller/DriveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/service/impl/DriveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/service/impl/DriveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/service/impl/KorisnikService.java" beforeDir="false" afterPath="$PROJECT_DIR$/DocumentDrive/DocumentDrive/src/main/java/com/document/drive/DocumentDrive/service/impl/KorisnikService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1uCqCe9GB8w05Q58D9gdGZWzI3K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42cf8808-4bc9-488a-ab60-a39a7b07a109" name="Default Changelist" comment="" />
+      <created>1624179795690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624179795690</updated>
+      <workItem from="1624179798801" duration="1213000" />
+      <workItem from="1624188258384" duration="214000" />
+      <workItem from="1624264229638" duration="2171000" />
+    </task>
+    <task id="LOCAL-00001" summary="finalna verzija">
+      <created>1624180091923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624180091923</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="finalna verzija" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalna verzija" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>

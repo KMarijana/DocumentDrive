@@ -1,0 +1,24 @@
+<div class="signIn-UpContainer">
+  <div class="column">
+      <!-- Zaglavlje koje sadrzi logo i natpis Otvorite nalog -->
+      <div class="header">
+           <img src="assets/Logo.png" title="Logo" alt="Logo">
+           <h3>Otvorite nalog</h3>
+      </div>
+      <!-- Forma za unos podataka prilikom registracije -->
+      <div class="loginForm">
+          <form>
+            <input type="text" name="ime" [(ngModel)]="korisnikReg.ime" placeholder="Ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+              <input type="text" name="prezime" [(ngModel)]="korisnikReg.prezime" placeholder="Prezime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+              <input type="text" name="korisnickoIme" [(ngModel)]="korisnikReg.korisnickoIme" placeholder="Korisničko ime"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+              <input type="email" name="email" [(ngModel)]="korisnikReg.email" placeholder="Email"  required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+              <input type="password" name="lozinka" [(ngModel)]="korisnikReg.lozinka" placeholder="Lozinka" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+              <input type="password" name="lozinka" [(ngModel)]="korisnikReg.potvrdaLozinke" placeholder="Potvrdi lozinku" required autocomplete="off" oninvalid="this.setCustomValidity('Morate popuniti ovo polje');" oninput="this.setCustomValidity('')">
+              <!-- Dugme potvrde -->
+              <button class="btn btn-primary" name="submitButton" (click)=registrujSe()>Potvrdi</button>
+          </form>
+      </div>
+      <!-- Povezivanje sa stranicom za prijavljivanje -->
+      <a class="signIn-UpMessage" (click)="prijaviSe()">Ako već posedujete nalog, prijavite se ovde</a>
+  </div>
+</div>
